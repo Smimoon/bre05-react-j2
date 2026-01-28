@@ -1,13 +1,12 @@
 import {useState} from 'react';
 const User = (props) => {
-    const[isActive, setIsActive] = useState(true);
-    const[role,setRole] = useState("Admin");
+    const[profile, setProfile] = useState ({status : false, role : "Anonyme"});
     
-    if(isActive === true) {
+    if( profile.status === true) {
         return(
             <article>
                 <h2>Mari Doucet</h2>
-                <h3>{role}</h3>
+                <h3>{profile.role}</h3>
                 <p>En ligne</p>
             </article>
         );
@@ -16,7 +15,7 @@ const User = (props) => {
         return(
             <article>
                 <h2>Mari Doucet</h2>
-                <h3>{role}</h3>
+                <h3>{profile.role}</h3>
                 <p>Hors-ligne</p>
             </article>
         );
